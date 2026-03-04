@@ -6,7 +6,7 @@
 #SBATCH --mail-user=sb5023@princeton.edu
 #SBATCH --mail-type=ALL
 #SBATCH --output=cr_arc_%j.out
-#SBATCH --array=0-7
+#SBATCH --array=0-3
 
 # requires a sample_list.txt of sample names; $1 = out_path
 
@@ -25,7 +25,7 @@ echo "This is array task ${SLURM_ARRAY_TASK_ID}, the sample name is ${sample_arr
 
 samplename=${sample_arr[SLURM_ARRAY_TASK_ID]} # Assign this task's sample name to a variable
 
-# [SLURM_ARRAY_TASK_ID] becomes 0, 1, 2, 3, 4, 5, 6, or 7
+# [SLURM_ARRAY_TASK_ID] becomes 0, 1, 2, 3
 
 cellranger-arc count --id=${samplename} \
     --reference=$refdata \
