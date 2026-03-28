@@ -3,6 +3,7 @@
 #SBATCH --time=7-00
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=20
+#SBATCH --partition=pritykinlab,main
 #SBATCH --job-name=cr_arc_%j
 #SBATCH --mail-user=sb5023@princeton.edu
 #SBATCH --mail-type=ALL
