@@ -5,9 +5,15 @@
 *.bam
 *.bai
 *.fastq.gz
+*.png
 
-# Jupyter checkpoints
+# plots
+plots/
+
+# Jupyter
 .ipynb_checkpoints/
+run_jupyter.out
+run_jupyter.slurm
 
 # Snakemake
 .snakemake/
