@@ -1,0 +1,26 @@
+# Large data files
+*.h5
+*.h5ad
+*.loom
+*.bam
+*.bai
+*.fastq.gz
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Snakemake
+.snakemake/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# R session
+.RData
+.Rhistory
+```
+
+You probably also want to make sure your `reference/` folder (where you just copied those notebooks) isn't tracked if you don't want Yingying's scripts in your repo history:
+```
+reference/

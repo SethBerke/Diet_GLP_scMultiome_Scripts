@@ -1,7 +1,8 @@
 #!/bin/bash
 #SBATCH --mem=128GB
-#SBATCH --time=5-00
+#SBATCH --time=7-00
 #SBATCH --nodes=1
+#SBATCH --cpus-per-task=20
 #SBATCH --job-name=cr_arc_%j
 #SBATCH --mail-user=sb5023@princeton.edu
 #SBATCH --mail-type=ALL
