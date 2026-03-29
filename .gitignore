@@ -8,8 +8,9 @@
 *.png
 *.out
 
-# follow
+# data
 gex_filtered/
+atac_filtered/
 
 # plots
 plots/
