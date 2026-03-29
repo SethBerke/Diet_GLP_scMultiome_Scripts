@@ -6,6 +6,10 @@
 *.bai
 *.fastq.gz
 *.png
+*.out
+
+# follow
+gex_filtered/
 
 # plots
 plots/

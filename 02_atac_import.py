@@ -25,13 +25,13 @@ def condition_from_sample(sample):
     # extracts condition from sample name e.g. NK_SFD -> SFD
     return sample.split("_", 1)[1]
 
-
+# reads atlas BED file and builds per-chromosome sorted arrays for binary search
 def load_atlas(atlas_bed):
-    # reads atlas BED file and builds per-chromosome sorted arrays for binary search
     atlas = pd.read_csv(atlas_bed, sep="\t", header=None, names=ATLAS_COLUMNS)
     atlas["interval"] = atlas["chr"] + ":" + atlas["start"].astype(str) + "-" + atlas["end"].astype(str)
     chrom_lookup = {}
     for chrom, sub in atlas.groupby("chr", sort=False):
+        sub     = sub.sort_values("start")  # ensure sorted within chromosome
         starts  = sub["start"].to_numpy(dtype=np.int64, copy=True)
         ends    = sub["end"].to_numpy(dtype=np.int64, copy=True)
         indices = sub.index.to_numpy(dtype=np.int64, copy=True)
