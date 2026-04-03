@@ -13,6 +13,9 @@ gex_filtered/
 atac_filtered/
 *_EA/
 
+# Reference Pipelines
+Yingying_reference/
+
 # plots
 plots/
 
