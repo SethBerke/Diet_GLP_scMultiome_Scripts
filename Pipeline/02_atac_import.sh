@@ -22,7 +22,7 @@ echo "-------------------------------------------"
 
 BASE=/Genomics/pritykinlab/seth/Diet_WL_scMultiome
 BARCODE_DIR=${BASE}/Diet_GLP_scMultiome_Scripts/gex_filtered/barcodes
-ATLAS=/Genomics/pritykinlab/seth/ATACCompendium/results/all_atac_peaks.bed
+ATLAS=/Genomics/pritykinlab/seth/ATACCompendium/archived_atlas_outputs/all_atac_peaks.bed
 TSS_BED=${BASE}/mm10_tss.bed
 OUT_DIR=${BASE}/Diet_GLP_scMultiome_Scripts/atac_gex_filtered_pre_EA2
 SCRIPT=${BASE}/Diet_GLP_scMultiome_Scripts/Pipeline/02_atac_import.py

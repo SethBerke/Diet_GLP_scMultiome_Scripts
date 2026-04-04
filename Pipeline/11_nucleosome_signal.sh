@@ -21,7 +21,7 @@ echo "Node: $(hostname)"
 echo "-------------------------------------------"
 
 BASE=/Genomics/pritykinlab/seth/Diet_WL_scMultiome
-SCRIPT=${BASE}/Diet_GLP_scMultiome_Scripts/022_nucleosome_signal.py
+SCRIPT=${BASE}/Diet_GLP_scMultiome_Scripts/Pipeline/11_nucleosome_signal.py
 
 python ${SCRIPT}
 

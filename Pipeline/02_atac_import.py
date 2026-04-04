@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 
-######################################################################################
-# Builds ATAC AnnData object for a single sample                                     #
-# Scored against the NK Atlas Peak Set using binary search on Tn5 insertion sites    #
-# Computes FRiP, TSS enrichment, and nucleosomal signal per cell                     #
-######################################################################################
+# For each sample, it streams the Cell Ranger fragment file, maps every Tn5 insertion site to your NK atlas peaks via binary search, and outputs a cell × peak count matrix with per-cell QC metrics (FRiP, TSS enrichment, nucleosomal signal) saved as an h5ad.
 
 import argparse
 import gzip
