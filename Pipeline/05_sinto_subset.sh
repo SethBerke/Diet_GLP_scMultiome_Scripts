@@ -21,7 +21,7 @@ echo "-------------------------------------------"
 
 BASE=/Genomics/pritykinlab/seth/Diet_WL_scMultiome
 CR_BASE=${BASE}/cr_arc_outputs
-BC_DIR=${BASE}/Diet_GLP_scMultiome_Scripts/nk_clean_barcodes
+BC_DIR=${BASE}/Diet_GLP_scMultiome_Scripts/nk_clean_barcodes_pre_EA2
 OUT_DIR=/Genomics/pritykinlab/seth/ATACCompendium/results/atac_alignments
 
 # NK_SFD
@@ -72,6 +72,17 @@ mv ${OUT_DIR}/atac_possorted_bam.bam ${OUT_DIR}/NK_HFD_CR.bam
 samtools index ${OUT_DIR}/NK_HFD_CR.bam
 echo "NK_CR done: $(date)"
 
+echo "-------------------------------------------"
+echo "Barcode sanity check:"
+for name in NK_SFD NK_HFD NK_GLP NK_CR; do
+    bc_file=${BC_DIR}/${name}_clean_barcodes.txt
+    if [ -f "$bc_file" ]; then
+        count=$(wc -l < "$bc_file")
+        echo "  ${name}: ${count} barcodes"
+    else
+        echo "  ${name}: BARCODE FILE NOT FOUND at ${bc_file}"
+    fi
+done
 echo "-------------------------------------------"
 echo "All samples complete: $(date)"
 echo "Output BAMs in: ${OUT_DIR}"
